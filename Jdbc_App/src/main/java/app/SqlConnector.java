@@ -13,7 +13,7 @@ public class SqlConnector {
             // create connection
             String url = "jdbc:mysql://localhost:3306/Jdbc_App";
             String username = "root";
-            String password = "*****"; // may be sensitive info
+            String password = "ghulam"; // may be sensitive info
             conn = DriverManager.getConnection(url, username, password);
 
         } catch(Exception e) {
