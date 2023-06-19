@@ -12,8 +12,6 @@ public class FormServlet extends HttpServlet {
     public void init() { }
     public void doGet(HttpServletRequest req, HttpServletResponse res) {
         try {
-            String title = req.getParameter("title");
-            System.out.println(title);
             RequestDispatcher dispatcher = req.getRequestDispatcher("view/form.jsp");
             dispatcher.forward(req, res);
         } catch (Exception ex) {

@@ -19,11 +19,13 @@ public class AddServlet extends HttpServlet {
             String author = req.getParameter("author");
             int qty = Integer.parseInt(req.getParameter("qty"));
             float price = Float.parseFloat(req.getParameter("price"));
-            int choice = req.getParameter("choice") == "yes" ? 1 : 0;
+            int choice = (req.getParameter("choice").equals("yes")) ? 1 : 0;
 
             Book book = new Book(title, author, qty, price, choice);
             DataAccess da = new DataAccess();
             boolean ans = da.insertBook(book);
+
+            res.sendRedirect("list");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

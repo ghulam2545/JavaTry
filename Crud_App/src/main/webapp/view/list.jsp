@@ -1,6 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="app.DataAccess" %>
 <%@ page import="app.Book" %>
 <%@ page import="java.util.List" %>
 <html>
@@ -44,11 +42,11 @@
                 <td><%= ans.get(idx).getAuthor()%></td>
                 <td><%= ans.get(idx).getQty()%></td>
                 <td><%= ans.get(idx).getPrice()%></td>
-                <td><%= ans.get(idx).isEBookAvail()%></td>
+                <td><%= ans.get(idx).isEBookAvail() == 1 ? "Yes" : "No"%></td>
                 <td class="action-btn">
-                    <a href="/edit?id=<%=ans.get(idx).getId()%>">Edit</a>
+                    <a href="edit?id=<%=ans.get(idx).getId()%>">Edit</a>
                     &nbsp&nbsp&nbsp;&nbsp;
-                    <a href="/delete?id=<%=ans.get(idx).getId()%>">Delete</a>
+                    <a href="delete?id=<%=ans.get(idx).getId()%>">Delete</a>
                 </td>
             </tr>
             <% ++idx; } %>

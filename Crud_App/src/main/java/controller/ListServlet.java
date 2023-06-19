@@ -20,8 +20,6 @@ public class ListServlet extends HttpServlet {
             DataAccess da = new DataAccess();
             List<Book> bookList = da.getAllBook();
             req.setAttribute("bookList", bookList);
-//            var ans = req.getAttribute("bookList");
-//            for(var e:ans) System.out.println(e);
 
             RequestDispatcher dispatcher = req.getRequestDispatcher("view/list.jsp");
             dispatcher.forward(req, res);

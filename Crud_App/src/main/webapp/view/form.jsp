@@ -9,7 +9,7 @@
         <h2>Book Management System</h2>
         <div class="links">
             <h4>
-                <a href="add">Add New Book</a>&nbsp;&nbsp;&nbsp;
+                <a href="form">Add New Book</a>&nbsp;&nbsp;&nbsp;
                 <a href="list">List All Book</a>
             </h4>
         </div>
@@ -24,7 +24,7 @@
                 <tr>
                     <th>Title</th>
                     <td>
-                        <input type="text" size="60" name="title" required>
+                        <input type="text" size="60" name="title" value="<% request.getAttribute("title"); %>" required>
                     </td>
                 </tr>
                 <tr>
