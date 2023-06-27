@@ -4,12 +4,12 @@ jar cf output.jar inputfiles  (OR)
 jar cf output.jar packageName
 ```
 
-viewing a jar file
+lookup in a jar file
 ```console
-jar tf output.jar
+jar tf yourfile.jar
 ```
 
 extracting a jar file
 ```console
-jar xf output.jar
+jar xf yourfile.jar
 ```
