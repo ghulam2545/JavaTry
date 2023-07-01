@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/edit")
-public class UpdateServlet extends HttpServlet {
+public class EditServlet extends HttpServlet {
     public void init() {}
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         req.setAttribute("title", "my title");
