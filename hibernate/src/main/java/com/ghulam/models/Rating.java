@@ -1,51 +1,24 @@
 package com.ghulam.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Embeddable
 public class Rating {
+    @Column(name = "cooking", nullable = false)
     private int Cooking;
+
+    @Column(name = "cutting")
     private int cutting;
+
+    @Column(name = "serving")
     private int serving;
-
-    public Rating() { }
-
-    public Rating(int cooking, int cutting, int serving) {
-        Cooking = cooking;
-        this.cutting = cutting;
-        this.serving = serving;
-    }
-
-    public int getCooking() {
-        return Cooking;
-    }
-
-    public int getCutting() {
-        return cutting;
-    }
-
-    public int getServing() {
-        return serving;
-    }
-
-    public void setCooking(int cooking) {
-        Cooking = cooking;
-    }
-
-    public void setCutting(int cutting) {
-        this.cutting = cutting;
-    }
-
-    public void setServing(int serving) {
-        this.serving = serving;
-    }
-
-    @Override
-    public String toString() {
-        return "Rating [ " +
-                "Cooking=" + Cooking +
-                ", cutting=" + cutting +
-                ", serving=" + serving +
-                " ].";
-    }
 }

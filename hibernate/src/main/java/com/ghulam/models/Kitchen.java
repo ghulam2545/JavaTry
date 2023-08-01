@@ -1,53 +1,29 @@
 package com.ghulam.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "kitchen")
 public class Kitchen {
+    @Id
+    @Column(name = "kitchen_id")
     private int kitchenId;
+
+    @Column(name = "location")
     private String location;
+
+    @Column(name = "area")
     private int area;
 
-    public Kitchen() { }
-
-    public Kitchen(int kitchenId, String location, int area) {
-        this.kitchenId = kitchenId;
-        this.location = location;
-        this.area = area;
-    }
-
-    public int getKitchenId() {
-        return kitchenId;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public int getArea() {
-        return area;
-    }
-
-    public void setKitchenId(int kitchenId) {
-        this.kitchenId = kitchenId;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public void setArea(int area) {
-        this.area = area;
-    }
-
-    @Override
-    public String toString() {
-        return "Kitchen [" +
-                "kitchenId=" + kitchenId +
-                ", location='" + location + '\'' +
-                ", area=" + area +
-                " ].";
-    }
+    @OneToOne
+    @JoinColumn(name = "chef_id")
+    private Chef byChef;
 }

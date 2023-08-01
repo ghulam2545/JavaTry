@@ -1,7 +1,14 @@
 package com.ghulam.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "chef")
 public class Chef {
@@ -17,57 +24,6 @@ public class Chef {
 
     private Rating rating;
 
-    @OneToOne
+    @OneToOne(mappedBy = "chef", cascade = CascadeType.ALL)
     private Kitchen kitchen;
-
-    public Chef() { }
-
-    public Chef(int chefId, String name, int age, Rating rating) {
-        this.chefId = chefId;
-        this.name = name;
-        this.age = age;
-        this.rating = rating;
-    }
-
-    public int getChefId() {
-        return chefId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public Rating getRating() {
-        return rating;
-    }
-
-    public void setChefId(int chefId) {
-        this.chefId = chefId;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setRating(Rating rating) {
-        this.rating = rating;
-    }
-
-    @Override
-    public String toString() {
-        return "Chef [" +
-                "chefId=" + chefId +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", rating=" + rating +
-                " ].";
-    }
 }

@@ -1,8 +1,7 @@
 package com.ghulam;
 
 import com.ghulam.enums.Gender;
-import com.ghulam.models.Address;
-import com.ghulam.models.Employee;
+import com.ghulam.models.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -43,6 +42,23 @@ public class App {
         /**
          * Relationships using hibernate and two tables
          */
+        Kitchen kitchen = new Kitchen();
+        kitchen.setKitchenId(12);
+        kitchen.setLocation("Noida");
+        kitchen.setArea(244);
+
+        Chef chef = new Chef();
+        chef.setChefId(1);
+        chef.setName("Kevin Brown");
+        chef.setAge(23);
+        chef.setRating(new Rating(20, 10, 10));
+
+        chef.setKitchen(kitchen);
+        kitchen.setByChef(chef);
+
+
+        session.save(chef);
+
         txt.commit();
         session.close();
     }
